@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Timeout.Demo.UnstableRemoteService.Controllers
 {
@@ -19,9 +19,11 @@ namespace Blog.Timeout.Demo.UnstableRemoteService.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public WeatherForecast Get()
+        public async Task<WeatherForecast> Get()
         {
             _logger.LogDebug("Getting a request for a weatherforecast at: {time}", DateTimeOffset.Now);
+
+            await Task.Delay(TimeSpan.FromMinutes(2));
             return new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(1),
