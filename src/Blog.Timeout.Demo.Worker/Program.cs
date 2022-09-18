@@ -1,6 +1,6 @@
-using Blog.Timeout.Demo.Worker;
+﻿using Blog.Timeout.Demo.Worker;
 
-IHost host = Host.CreateDefaultBuilder(args)
+var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
         services.AddHttpClient<IDefaultService, DefaultService>(client =>

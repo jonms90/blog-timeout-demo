@@ -1,6 +1,4 @@
-using System.Text.Json.Serialization;
-
-public class WeatherSummary
+﻿public class WeatherSummary
 {
     //[JsonPropertyName("date")]
     public DateTime Date { get; set; }

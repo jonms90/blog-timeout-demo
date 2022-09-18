@@ -1,5 +1,4 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json;
 
 namespace Blog.Timeout.Demo.Worker;
 
@@ -17,9 +16,9 @@ public class DefaultService : IDefaultService
     {
         var result = await _httpClient.GetStringAsync("/WeatherForecast");
         var weather =
-            JsonSerializer.Deserialize<WeatherSummary>(result, new JsonSerializerOptions{PropertyNamingPolicy = JsonNamingPolicy.CamelCase}) ??
+            JsonSerializer.Deserialize<WeatherSummary>(result, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }) ??
 
-    new WeatherSummary {Summary = "Unknown"};
+    new WeatherSummary { Summary = "Unknown" };
         return weather;
     }
 }
