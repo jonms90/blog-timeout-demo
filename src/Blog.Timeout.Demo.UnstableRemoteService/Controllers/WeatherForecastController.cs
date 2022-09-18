@@ -24,7 +24,7 @@ namespace Blog.Timeout.Demo.UnstableRemoteService.Controllers
         public async Task<WeatherForecast> Get()
         {
             _logger.LogDebug("Getting a request for a weatherforecast at: {time}", DateTimeOffset.Now);
-            
+
             if (_random.Next(0, 2) == 0)
             {
                 await Task.Delay(TimeSpan.FromMinutes(2));
