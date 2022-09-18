@@ -1,4 +1,4 @@
-public interface IDefaultService
+﻿public interface IDefaultService
 {
-    Task<WeatherSummary> GetWeatherSummaryAsync();
+    Task<WeatherSummary> GetWeatherSummaryAsync(CancellationToken ct);
 }

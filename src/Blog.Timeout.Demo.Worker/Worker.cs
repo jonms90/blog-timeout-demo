@@ -1,4 +1,4 @@
-namespace Blog.Timeout.Demo.Worker
+﻿namespace Blog.Timeout.Demo.Worker
 {
     public class Worker : BackgroundService
     {
@@ -18,7 +18,7 @@ namespace Blog.Timeout.Demo.Worker
                 try
                 {
                     _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                    var weather = await _defaultService.GetWeatherSummaryAsync();
+                    var weather = await _defaultService.GetWeatherSummaryAsync(stoppingToken);
                     _logger.LogInformation("Weather summary received: {degrees}: {summary}", weather.TemperatureC, weather.Summary);
                 }
                 catch (Exception ex)
